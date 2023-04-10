@@ -45,12 +45,21 @@ class _MyPerfumeState extends State<MyPerfume> {
   }
 
   Widget _body() => Stack(
-        children: [_listView()],
+        children: [
+          FutureBuilder(
+            future: context.read<CategoryProvider>().getItems(name: "perfumes"),
+            builder: (context, snapshot) {
+              List items = context.read<CategoryProvider>().items;
+              print(items);
+              return _listView(items);
+            },
+          )
+        ],
       );
-  Widget _listView() => SizedBox(
+  Widget _listView(items) => SizedBox(
         height: (MediaQuery.of(context).size.height * 60) / 100,
         child: ListView.builder(
-            itemCount: images.length,
+            itemCount: items.length,
             controller: controller,
             itemBuilder: (context, index) {
               final itemOffset = index * itemSize;
@@ -69,7 +78,7 @@ class _MyPerfumeState extends State<MyPerfume> {
                     height: itemSize,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage(images[index]),
+                            image: NetworkImage(items[index]["image"]),
                             fit: BoxFit.cover),
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: const [

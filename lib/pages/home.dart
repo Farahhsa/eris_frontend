@@ -136,17 +136,7 @@ class _HomeState extends State<Home> {
                 "Perfums",
                 style: TextStyle(fontSize: 30, height: 2.21),
               ),
-              FutureBuilder(
-                future:
-                    context.read<CategoryProvider>().getItems(name: "farah"),
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState.name == "waiting") {
-                    return Text("Loading...");
-                  }
-                  print("HI FARAH ${snapshot.data}");
-                  return MyPerfume();
-                },
-              )
+              MyPerfume()
             ],
           ))
         ],
