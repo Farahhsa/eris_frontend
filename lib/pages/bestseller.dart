@@ -13,12 +13,10 @@ class _MyProductState extends State<MyProduct> {
   final double itemSize = 100;
 
   var images = [
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
+    'assets/images/hero.png',
+    'assets/images/calm.png',
+    'assets/images/paris.png',
+    'assets/images/gelata.png'
   ];
   get scale => null;
 
@@ -60,6 +58,7 @@ class _MyProductState extends State<MyProduct> {
   Widget _listView() => SizedBox(
         height: (MediaQuery.of(context).size.height * 60) / 100,
         child: ListView.builder(
+            padding: EdgeInsets.all(20),
             itemCount: images.length,
             controller: controller,
             itemBuilder: (context, index) {
@@ -82,11 +81,11 @@ class _MyProductState extends State<MyProduct> {
                         // color: Colors.white,
                         image: DecorationImage(
                             image: AssetImage(images[index]),
-                            fit: BoxFit.cover),
+                            fit: BoxFit.contain),
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: const [
                           BoxShadow(
-                              color: Colors.grey,
+                              color: Colors.white,
                               blurRadius: 2,
                               spreadRadius: 1)
                         ]),

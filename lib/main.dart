@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/DetialItemPage.dart';
 import 'package:flutter_application_1/pages/bestseller.dart';
 import 'package:flutter_application_1/pages/home.dart';
 import 'package:flutter_application_1/pages/landingpage.dart';
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
 }
 
 final _router = GoRouter(
-  initialLocation: '/home',
+  initialLocation: '/landing',
   routes: [
     GoRoute(
       path: '/landing',
@@ -55,9 +56,14 @@ final _router = GoRouter(
       path: '/signin',
       builder: (context, state) => SigninPage(),
     ),
-    // GoRoute(
-    //   path: '/bestseller',
-    //   builder: (context, State) => MyProduct(),
-    // ),
+    GoRoute(
+      path: '/signup',
+      builder: (context, state) => SigninPage(),
+    ),
+    GoRoute(
+      path: '/details/:index',
+      builder: (context, state) =>
+          DetialItemPage(index: state.params['index']!),
+    ),
   ],
 );

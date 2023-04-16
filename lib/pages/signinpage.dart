@@ -12,24 +12,29 @@ class SigninPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.brown[200],
       body: Stack(
         children: [
           Row(
             // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 100, left: 320),
-                child: CircleAvatar(
-                  backgroundImage: AssetImage(
-                    'assets/images/logo2.png',
-                  ),
-                  radius: 35,
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.only(top: 100, left: 320),
+              //   child: CircleAvatar(
+              //     backgroundImage: AssetImage(
+              //       'assets/images/logo2.png',
+              //     ),
+              //     radius: 35,
+              //   ),
+              // ),
             ],
           ),
           Container(
+            // decoration: BoxDecoration(
+            //     image: DecorationImage(
+            //   image: AssetImage('assets/images/bk.png'),
+            //   fit: BoxFit.cover,
+            // )),
             child: Column(
               children: [
                 Padding(
@@ -37,8 +42,8 @@ class SigninPage extends StatelessWidget {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Welcome\nBack',
-                          style: TextStyle(color: Colors.blue)),
+                      Text('Welcome to eris family',
+                          style: TextStyle(color: Colors.brown)),
                     ],
                   ),
                 ),
@@ -95,11 +100,11 @@ class SigninPage extends StatelessWidget {
                           children: [
                             Text(
                               'Sign in',
-                              style: TextStyle(color: Colors.blue),
+                              style: TextStyle(color: Colors.brown),
                             ),
                             CircleAvatar(
                               radius: 30,
-                              backgroundColor: Colors.amber,
+                              backgroundColor: Colors.black,
                               child: IconButton(
                                   color: Colors.white,
                                   onPressed: () {
@@ -117,35 +122,35 @@ class SigninPage extends StatelessWidget {
                         SizedBox(
                           height: 40,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            TextButton(
-                              onPressed: () {
-                                context.push("/signup");
-                              },
-                              child: Text(
-                                'Sign Up',
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                    decoration: TextDecoration.underline,
-                                    color: Color(0xff4c505b),
-                                    fontSize: 18),
-                              ),
-                              style: ButtonStyle(),
-                            ),
-                            TextButton(
-                                onPressed: () {},
-                                child: Text(
-                                  'Forgot Password',
-                                  style: TextStyle(
-                                    decoration: TextDecoration.underline,
-                                    color: Color(0xff4c505b),
-                                    fontSize: 18,
-                                  ),
-                                )),
-                          ],
-                        )
+                        // Row(
+                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        //   children: [
+                        //     TextButton(
+                        //       onPressed: () {
+                        //         context.push("/signup");
+                        //       },
+                        //       child: Text(
+                        //         'Sign Up',
+                        //         textAlign: TextAlign.left,
+                        //         style: TextStyle(
+                        //             decoration: TextDecoration.underline,
+                        //             color: Color(0xff4c505b),
+                        //             fontSize: 18),
+                        //       ),
+                        //       style: ButtonStyle(),
+                        //     ),
+                        //     TextButton(
+                        //         onPressed: () {},
+                        //         child: Text(
+                        //           'Forgot Password',
+                        //           style: TextStyle(
+                        //             decoration: TextDecoration.underline,
+                        //             color: Color(0xff4c505b),
+                        //             fontSize: 18,
+                        //           ),
+                        //         )),
+                        //   ],
+                        // )
                       ],
                     ),
                   )
